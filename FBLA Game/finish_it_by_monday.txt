@@ -1,0 +1,21 @@
+To-Do List
+
+Main Menu:
+	Title Place Holder
+	Levels/Play Button
+	Setting Button
+	Quit Button
+Inside Levels/Play Button:
+	"Levels" Display at the top
+	Levels Place Holders
+Inside Settings Button:
+	Assesibility
+	Controls
+	All the controls with scrolling functionability
+	Audio tab
+	Audio Sliders:
+		Master Sliders
+		Music Sliders
+		Envieroment Sliders
+	Preference Tab
+	

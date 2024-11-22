@@ -1,0 +1,43 @@
+def Start_Screen_Display():
+    
+    global bg_color_start, cycle
+    
+    while True:
+    
+        ratio()
+        
+        if bg_color_start[0] < bg_color_start_max[0] and cycle == 0:
+            bg_color_start = (bg_color_start[0] + 1, bg_color_start[0] + 1, bg_color_start[0] + 1)
+        else:
+            cycle = 1
+            
+        if bg_color_start[0] > bg_color_start_min[0] and cycle == 1:
+            bg_color_start = (bg_color_start[0] - 1, bg_color_start[0] - 1, bg_color_start[0] - 1)
+        else:
+            cycle = 0
+        
+        doto_font_1(int(70 * res_scale))
+        
+        game_title_txt = doto_font.render("Path of Momentum", False, black)
+        
+        doto_font_1(int(28 * res_scale))
+        
+        start_with_any_button_txt = doto_font.render("Press anything to continue", False, bg_color_start)
+        
+        screen.fill((80, 80, 80))
+        
+        screen.blit(game_title_txt, game_title_txt.get_rect(center=(pygame.Surface.get_width(screen) // 2, 200 * h_ratio)))
+        screen.blit(start_with_any_button_txt, start_with_any_button_txt.get_rect(center=(pygame.Surface.get_width(screen) // 2, 680 * h_ratio)))
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                return False
+            if event.type == pygame.KEYDOWN:
+                return True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                return True
+                
+        pygame.display.flip()
+        
+        clock.tick(60)

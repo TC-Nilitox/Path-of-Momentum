@@ -1,0 +1,29 @@
+How each ability will work.
+
+We have Blocks, Gravity, and Air abilities, here how each one would work:
+
+	- First Blocks, blocks will affect the whole unit:
+		
+		- Solid, depending on when the gravity is going, it will just take a hit and remove all the momentum of the object it got hit by, when i say "All" i just mean the corresponding direccional momentum
+		
+		- Bouncy 1, this will just make the velocity point to the opposite way with a reduction on its force.
+		
+		- Planet, this block will make a circle on the choosed unit, it cant be used with select line and it will affect in a 3x3 area around it. It will pull objects in with a set amount of gravity.
+	
+	- Now we go to gravity:
+		
+		- Invert, will just point to the opposite side where gravity is already pointing to.
+		
+		- Zero Gravity, will just make the gravity 0.
+		
+		- Side Ways, will just point the gravity to the left of where it is already pointing so Up will turn to left, and down if you were 2D looking down left will be right in this case.
+		
+		- Gravity Up and Gravity Down will just Increment or Decrement the gravity value with a max of 10 and a min of -10. This will act on where ever the center of the object is located.
+		
+	- Air, this will work similar to gravity but will be able to give rotational value to the object:
+	
+		- Swirl, will make air flow in a circle inside of the unit, if the whole line is selected in will default to 3 lines of air, 2 outers and 1 inner, the 2 outers will go in opposite direccions and the inner will go in a set direccion which can change.
+		
+		- Inverse, makes the center line of the airflow go to the opposite direccion, if 2 lines intersect it will make a swirl on the intersection and if there is a 2x2 for example, it will make a swirl with said size.
+		
+		- Swirl Left and Swirl Right will swirl the object with that type of rotation, a ball will easily move, while a rectangle might need different forces to be acting on it.
